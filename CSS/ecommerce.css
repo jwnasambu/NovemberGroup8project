@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: grey;
+    height: 5rem;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 600;
+}
+
+.product-container {
+    
+    height: 30rem;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+    padding: 0 2em;
+    border-radius: 5px;
+}
+
+img {
+    width: 100%;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.desc {
+    font-size: 1.1rem;
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+    }
+
+    h1 {
+      text-align: center;
+      margin: auto;
+    }
+
+    #products-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+      width: 100%;
+    }
+
+    #sidebar {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      height: 100dvh;
+      position: fixed;
+      width: 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .body {
+        padding-left: 10rem;
+    }
+
+    .category-link {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      cursor: pointer;
+      height: 100%;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+      padding: 20px;
+      width: 20%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 30rem;
+    }
+
+    .product-card h3 {
+  /* Limit title to two lines and add ellipsis for overflow */
+  margin: 10px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+
+.product-card p {
+  /* Limit description to three lines and add ellipsis for overflow */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+    .product-card img {
+  max-width: 100%;
+  height: 200px; /* Set the desired height */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.product-card .desc {
+    text-align: justify;
+}
+  </style>
+</head>
+<body> 
+
+  <div id="sidebar">
+    <a href="https://fakestoreapi.com/products" class="category-link" id="all-products">All Products</a>
+    <a href="https://fakestoreapi.com/products/category/electronics" class="category-link" id="electronics">Electronics</a>
+    <a href="https://fakestoreapi.com/products/category/jewelery" class="category-link" id="jewelery">Jewelery</a>
+    <a href="https://fakestoreapi.com/products/category/men's clothing" class="category-link" id="mens-clothing">Men's Clothing</a>
+    <a href="https://fakestoreapi.com/products/category/women's clothing" class="category-link" id="womens-clothing">Women's Clothing</a>
+  </div>
+
+  <div class="body">
+    <h1>Ecommerce Project</h1>
+
+  <div id="products-container"></div>
+
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const productsContainer = document.getElementById('products-container');
+      const sidebar = document.getElementById('sidebar');
+
+      // Function to fetch products based on category
+      async function fetchProducts(category) {
+        try {
+          const url = category ? `https://fakestoreapi.com/products/category/${category}` : 'https://fakestoreapi.com/products';
+          const response = await fetch(url);
+          const products = await response.json();
+          displayProducts(products);
+        } catch (error) {
+          console.error('Error fetching products:', error);
+        }
+      }
+
+      // Function to display products on the webpage
+      function displayProducts(products) {
+        productsContainer.innerHTML = '';
+
+        products.forEach(product => {
+          const card = document.createElement('div');
+          card.classList.add('product-card');
+
+          card.innerHTML = `
+            <img src="${product.image}" alt="${product.title}" >
+            <h3>${product.title}</h3>
+            <p>${product.category}</p>
+            <p>$${product.price}</p>
+            <p class="desc">${product.description}</p>
+          `;
+
+          productsContainer.appendChild(card);
+        });
+      }
+
+      // Function to handle category link clicks
+      function handleCategoryClick(event) {
+        event.preventDefault();
+        const category = event.target.id;
+        fetchProducts(category);
+      }
+
+      // Add event listeners to category links
+      const categoryLinks = document.querySelectorAll('.category-link');
+      categoryLinks.forEach(link => {
+        link.addEventListener('click', handleCategoryClick);
+      });
+
+      // Call the fetchProducts function to load all products on page load
+      fetchProducts();
+
+      // Add event listener to 'All Products' link
+      const allProductsLink = document.getElementById('all-products');
+      allProductsLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        fetchProducts();
+      });
+    });
+  </script>
+</body>
+</html>
