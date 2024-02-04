@@ -4,12 +4,25 @@
     padding: 0;
 }
 
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
 nav {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     background-color: grey;
     height: 5rem;
+    position: fixed;
+    width:  100%;
+
 }
 
 nav a {

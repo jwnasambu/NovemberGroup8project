@@ -68,16 +68,42 @@ footer {
 nav {
   display: flex;
   position: fixed;
-  background-color: #333;
+  /* background-color: #333; */
+  background-color: grey;
   width: 100%;
   justify-content: space-around;
+  font-size: 1.2rem;
 }
+
+nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+
+
+/* nav link.active {
+  color: red;
+} */
+
+
+li a:hover{
+  color: red; 
+  cursor: pointer;
+}
+
 li {
   list-style: none;
   display: inline-flex;
-  font-size: large;
   margin: 0 20px;
   flex-direction: row;
+}
+
+#product:hover{
+  color: red;
 }
 
 button {
