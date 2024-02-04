@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@
     }
 
     #products-container {
-      display: flex;
+      display: flex;  
       flex-wrap: wrap;
       justify-content: space-around;
       padding: 20px;
@@ -39,7 +40,7 @@
     }
 
     .body {
-        padding-left: 10rem;
+      padding-left: 10rem;
     }
 
     .category-link {
@@ -66,52 +67,58 @@
     }
 
     .product-card h3 {
-  /* Limit title to two lines and add ellipsis for overflow */
-  margin: 10px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  word-break: break-word;
-}
+      /* Limit title to two lines and add ellipsis for overflow */
+      margin: 10px 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      word-break: break-word;
+    }
 
-.product-card p {
-  /* Limit description to three lines and add ellipsis for overflow */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  margin-bottom: 10px;
-  word-break: break-word;
-}
+    .product-card p {
+      /* Limit description to three lines and add ellipsis for overflow */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      margin-bottom: 10px;
+      word-break: break-word;
+    }
 
     .product-card img {
-  max-width: 100%;
-  height: 200px; /* Set the desired height */
-  object-fit: cover; /* Maintain aspect ratio and cover the container */
-}
+      max-width: 100%;
+      height: 200px;
+      /* Set the desired height */
+      object-fit: cover;
+      /* Maintain aspect ratio and cover the container */
+    }
 
-.product-card .desc {
-    text-align: justify;
-}
+    .product-card .desc {
+      text-align: justify;
+    }
   </style>
 </head>
-<body> 
+
+<body>
 
   <div id="sidebar">
     <a href="https://fakestoreapi.com/products" class="category-link" id="all-products">All Products</a>
-    <a href="https://fakestoreapi.com/products/category/electronics" class="category-link" id="electronics">Electronics</a>
+    <a href="https://fakestoreapi.com/products/category/electronics" class="category-link"
+      id="electronics">Electronics</a>
     <a href="https://fakestoreapi.com/products/category/jewelery" class="category-link" id="jewelery">Jewelery</a>
-    <a href="https://fakestoreapi.com/products/category/men's clothing" class="category-link" id="mens-clothing">Men's Clothing</a>
-    <a href="https://fakestoreapi.com/products/category/women's clothing" class="category-link" id="womens-clothing">Women's Clothing</a>
+    <a href="https://fakestoreapi.com/products/category/men's clothing" class="category-link" id="mens-clothing">Men's
+      Clothing</a>
+    <a href="https://fakestoreapi.com/products/category/women's clothing" class="category-link"
+      id="womens-clothing">Women's Clothing</a>
   </div>
 
   <div class="body">
     <h1>Ecommerce Project</h1>
 
-  <div id="products-container"></div>
+    <div id="products-container"></div>
 
   </div>
   <script>
@@ -176,4 +183,5 @@
     });
   </script>
 </body>
+
 </html>

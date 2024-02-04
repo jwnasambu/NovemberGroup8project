@@ -26,10 +26,10 @@
 
 /* The back button to home page */
 #btn {
-  margin-left: 25px;
+  margin-left: 2.7%;
   margin-top: 15px;
   padding-inline: 20px;
-  padding-block: 10px;
+  /* padding-block: 10px; */
   border-radius: 5px;
   cursor: pointer;
 }
