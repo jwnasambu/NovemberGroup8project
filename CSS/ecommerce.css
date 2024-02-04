@@ -10,6 +10,9 @@ nav {
     justify-content: space-evenly;
     background-color: grey;
     height: 5rem;
+    position: fixed;
+    width:  100%;
+
 }
 
 nav a {
