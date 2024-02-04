@@ -20,18 +20,20 @@ header {
   text-align: center;
 }
 #welcome-section {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1)
     ),
-    url("../IMAGES/restaurant_interior.jpg");
+    url("../IMAGES/landing_page.jpg"); */
   background-size: cover;
   height: 50vh;
   text-align: center;
   padding: 10%;
-  backdrop-filter: blur (10px);
-  color: white;
+  backdrop-filter: blur (20px);
+  color: black;
+  background-color: #fff;
+  background-image: url(../IMAGES/landing_page2.png);
 }
 
 #welcome-section,
@@ -40,12 +42,13 @@ h1 {
   font-size: x-large;
   font-weight: bolder;
 }
+
 #welcome-section,
 p {
   font-size: large;
 }
 #intro {
-  padding: 2%;
+  padding: 
 }
 
 /* img {
@@ -59,10 +62,11 @@ footer {
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 10px;
+  padding: 0px 5px;
   position: fixed;
   bottom: 0;
   width: 100%;
+  
 }
 
 nav {
@@ -73,6 +77,9 @@ nav {
   width: 100%;
   justify-content: space-around;
   font-size: 1.2rem;
+  padding-top: 0;
+  padding-bottom:0;
+  min-height: 10px;
 }
 
 nav a {
@@ -83,6 +90,9 @@ nav a {
   transition: 0.3s;
 }
 
+nav a:hover {
+  color: red;
+}
 
 
 /* nav link.active {
@@ -111,7 +121,7 @@ button {
   padding: 10px;
   background-color: yellow;
   font-weight: bold;
-  margin-top: 3%;
+  margin-top: 1%;
   cursor: pointer;
 }
 
